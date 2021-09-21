@@ -1,0 +1,155 @@
+{% extends 'smartapp/base.html' %}
+{% load static %}
+{% block content %}
+{% load staticfiles %}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Get I18N Value</title>
+    <link rel="stylesheet" type ='text/css' href="{% static 'css/inputvalidation.css' %}">
+</head>
+
+<body>
+    <form name="demoForm">
+      <div style="height:25px; text-align:center;">
+          <div class="select_join" style="margin-left:25px">
+        <select name="demoSelect" onchange="showData()">
+            <option value="zilch">Select The Language:</option>
+            <option value="ENG">English</option>
+            <option value="JPN">Japanese</option>
+            <option value="CHS">Chinese</option>
+            <option value="FRA">France</option>
+            <option value="GER">Germany</option>
+        </select>
+      </div>
+    </div>
+
+      <div>
+        <br>
+        <label for="Enter_character">Character: </label>
+        <input id="Enter_character" type="text" name=Enter_character onchange="showData()"
+        align="center" width="48" height="48" disabled/>
+        <br>
+    </div>
+        <br>
+        <label for="Locale_Date">Regional Date: </label>
+        <input id="Locale_Date" type="text" name="Locale_Date" onchange="showData()" disabled/>
+        <br>
+
+        <br>
+        <label for="UTC_Date">UTC Date:</label>
+        <input id="UTC_Date" type="text" name="UTC_Date:" onchange="showData()" disabled/>
+        <br>
+
+        <br>
+        <label for="Locale_Time">Regional Time Format: </label>
+        <input id="Locale_Time" type="text" name="Locale_Time" onchange="showData()" disabled/>
+        <br>
+
+        <br>
+        <label for="Thousand_Sep">Thousand Seperator: </label>
+        <input id="Thousand_Sep" type="text" name="Thousand_Sep" onchange="showData()" disabled/>
+        <br>
+
+        <br>
+        <label for="Decimal_Sep">Decimal Seperator: </label>
+        <input id="Decimal_Sep" type="text" name="Decimal_Sep" onchange="showData()" disabled/>
+        <br>
+
+        <br>
+        <label for="Leg_Encoding">Legacy encoding: </label>
+        <input id="Leg_Encoding" type="text" name="Leg_Encoding" onchange="showData()" disabled/>
+        <br>
+
+    </form>
+
+    <p id="firstP">&nbsp;</p>
+    <p id="secondP">&nbsp;</p>
+
+   <script>
+    function showData() {
+        var theSelect = demoForm.demoSelect;
+        var Charp;
+        var LDate;
+        var UTCDate;
+        var LTimeFmt;
+        var ThSep;
+        var DSep;
+        var LegChar;
+
+       		if (theSelect[theSelect.selectedIndex].value === 'ENG') {
+                       Charp = "Internationalization"
+                       LDate = "mm/dd/yyyy"
+                       UTCDate = "mm/dd/yyyy"
+                       LTimeFmt = "12 hrs AM/PM"
+                       ThSep = "comma (,)"
+                       DSep = "period (.)"
+                       LegChar = "ASCII"
+            }
+
+               else if (theSelect[theSelect.selectedIndex].value === 'JPN') {
+                  	   Charp = "かたかなカタカナ"
+                       LDate = "yyyy/mm/dd"
+                       UTCDate = "mm/dd/yyyy"
+                       LTimeFmt = "12 hrs AM/PM"
+                       ThSep = "comma (,)"
+                       DSep = "period (.)"
+                       LegChar = "Shift-JIS"
+               }
+               else if (theSelect[theSelect.selectedIndex].value === 'CHS') {
+                  	   Charp = "好悲催的"
+                       LDate = "yyyy/mm/dd"
+                       UTCDate = "mm/dd/yyyy"
+                       LTimeFmt = "12 hrs AM/PM"
+                       ThSep = "comma (,)"
+                       DSep = "period (.)"
+                       LegChar = "GB 18030"
+               }
+               else if (theSelect[theSelect.selectedIndex].value === 'FRA') {
+
+                  	   Charp = "éçmàù"
+                       LDate = "dd/MM/yyyy"
+                       UTCDate = "mm/dd/yyyy"
+                       LTimeFmt = "24 Hours"
+                       ThSep = "Space ( )"
+                       DSep = "Comma (,)"
+                       LegChar = "ISO-8859-1"
+               }
+               else if (theSelect[theSelect.selectedIndex].value === 'GER') {
+
+                  	   Charp = "öäßä"
+                       LDate = "dd.MM.yyyy"
+                       UTCDate = "mm/dd/yyyy"
+                       LTimeFmt = "24 Hours"
+                       ThSep = "Period (.)"
+                       DSep = "Comma (,)"
+                       LegChar = "ISO-8859-15"
+               }
+            else {
+
+                    Charp = "No Language Selected";
+            }
+
+            document.getElementById('Enter_character').value=Charp;
+            document.getElementById('Locale_Date').value=LDate;
+            document.getElementById('UTC_Date').value=UTCDate;
+            document.getElementById('Locale_Time').value=LTimeFmt;
+            document.getElementById('Thousand_Sep').value=ThSep;
+            document.getElementById('Decimal_Sep').value=DSep;
+            document.getElementById('Leg_Encoding').value=LegChar;
+    }
+    </script>
+
+	<p><b> <font size="3"> Note: Data that can be used for i18N L1 testing: </font><br /> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 1) Non-ASCII characters to test character handling.  <br /> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 2) Quick reference to regional locale formats. <br /></b></p>
+	
+</body>
+</html>
+
+
+{% if uploaded_file_url %}
+<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+
+{% extends 'smartapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2><font face="verdana">I18N - Locale Information</font></h2>
+
+    <br>
+    <label for="select_lang">Drop down to select the language:</label>
+    <select name="select_lang" id="select_lang">
+        <option value="1">English1</option>
+        <option value="2">Simplified Chinese</option>
+        <option value="3">Japanese</option>
+        <option value="4">German</option>
+        <option value="5">France</option>
+    </select>
+
+    <br>
+    <label for="Enter_character">Character: </label>
+    <input id="Enter_character" type="text" name=Enter_character maxlength="100"/>
+
+    <br>
+
+    <br>
+    <label for="Locale_Date">Regional Date: </label>
+    <input id="Locale_Date" type="text" name="Locale_Date" maxlength="100"/>
+    <br>
+
+    <br>
+    <label for="UTC_Date">UTC Date: </label>
+    <input id="UTC_Date" type="text" name="UTC Date:" maxlength="100"/>
+    <br>
+
+    <br>
+    <label for="Locale_Time">Regional Time : </label>
+    <input id="Locale_Time" type="text" name="Locale_Time" maxlength="100"/>
+    <br>
+
+
+<h4> Legacy Encoding : For Eng -ASCII, For de- ISO-8859-15, For Chinese - GBK, For Jp - SHIFT-JIS </h4>
+
+<br>
+<h4> Would you like to validate your UTF chars?></h4>
+
+</form>
+
+{% if uploaded_file_url %}
+<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+{% endif %}
+
+
+{% endblock %}

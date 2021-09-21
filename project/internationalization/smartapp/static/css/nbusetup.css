@@ -1,0 +1,17 @@
+.select_join {
+  width: 350px;
+  text-align:left;
+ }
+
+.select_join select {
+  width: 200px;
+  font-size:12pt;
+
+}
+
+label{
+    float: left;
+    clear: left;
+    width: 200px;
+    text-align:left;
+}

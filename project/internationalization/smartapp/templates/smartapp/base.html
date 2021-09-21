@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129913853-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-129913853-1');
+	</script>
+
+	<title>Simplified i18N</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+
+<div class="page-header">
+    <img src="https://www.veritas.com/content/dam/Veritas/images/logos/veritas/veritas-logo.png" alt="Veritas">
+    <h1><a href="/"><font face="verdana">Internationalization Tool</font></a></h1>
+    <h2><font face="verdana">I18N made simple to understand, easy to deploy</font></h2>
+</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/i18nhome/">Home</a></li>
+            <li class="active"><a href="/setuplocale/">Setup Locale</a></li>
+            <li><a href="/i18nkb/">Knowledge Base</a></li>
+            <li><a href="/syslocale/">Locale Information</a></li>
+            <li><a href="/osdownload/">OS Download</a></li>
+            <!--<li><a href="/nbusetup/">Netbackup Setup</a></li>-->
+            <li><a href="/syslocaledownload/">Manual Download</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+<br>
+<footer>
+    <p><br><br><br><br><br><h4>&copy; Veritas 2019 </h4></p>
+</footer>
+</body>
+</html>

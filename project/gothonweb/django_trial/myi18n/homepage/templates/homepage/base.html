@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>Simplified i18N</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+
+<div class="page-header">
+    <img src="https://www.veritas.com/content/dam/Veritas/images/logos/veritas/veritas-logo.png" alt="Veritas">
+    <h1><a href="/">Internationalization Tool</a></h1>
+    <h2>i18N made simple to understand, easy to deploy</h2>
+</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Simplified i18N</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/home/">Home</a></li>
+            <li><a href="/setuplocale/">Setup Locale</a></li>
+            <li><a href="/nbucompsearch/">Knowledge Base</a></li>
+            <li><a href="/nbucompdbview">Input Validation</a></li>
+            <li><a href="/syslocaledownload/">Manual Download</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+<br>
+<footer>
+    <p><br><br><br><br><br><h4>&copy; Veritas 2017 </h4></p>
+</footer>
+</body>
+</html>

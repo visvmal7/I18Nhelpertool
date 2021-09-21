@@ -1,0 +1,78 @@
+{% extends 'smartapp/base.html' %}
+{% load render_table from django_tables2 %}
+{% block content %}
+<!--<form action="" method="get" accept-charset="utf-8">-->
+                    <!--<select name="product_search" id="product_search">-->
+                        <!--<option value="abc">Select a product</option>-->
+                        <!--{% for brand in brand_list %}-->
+                        <!--<option value="{{ brand.code}}">{{ brand.description }}</option>-->
+                        <!--{% endfor %}-->
+                    <!--</select>-->
+
+<form action="/nbucompsearch/" method="post">{% csrf_token %}
+    <p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Search Tool</h2>
+
+                <p>For compatibility search </p>
+
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <label for="product_search">Product Name:</label>
+                <input id="product_search" type="text" name="product_search" maxlength="100"/>
+                    <br>
+                    <p>
+                        <input type="submit" value="Submit" class="btn btn-success btn-block"/>
+                    </p>
+            </div>
+
+            <!--<div class="col-md-4">-->
+            <!--<h2>Cache Refresh</h2>-->
+
+            <!--<p>You can trigger On-demand cache refresh from here. </p>-->
+
+            <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+            <!--</div>-->
+
+            <div class="col-md-4">
+                <h2>View Full DB (Admins Only)</h2>
+
+                <p>View Full DB (Admins Only)</p>
+
+                <p><a class="btn btn-default" href="../nbucompdbview" role="button">View details &raquo;</a></p>
+            </div>
+
+            <div class="col-md-4">
+                <form action="" method="get" accept-charset="utf-8">
+                    <select name="product_search" id="product_search">
+                        <option value="Z">Select a product</option>
+                        {% for brand in brand_list %}
+                        <option value="{{ brand.code}}">{{ brand.description }}</option>
+                        {% endfor %}
+                    </select>
+            </div>
+
+        </div>
+        <!--<div class="ui-widget">-->
+        <!--<label for="id_code1">Etrack ID:</label>-->
+        <!--<input id="id_code1" type="text" name="etrackid" maxlength="100"/>-->
+        <!--</div>-->
+    </p>
+    <!--<p>-->
+    <!--<input type="submit" value="Submit" class="btn btn-success btn-lg"/>-->
+
+</form>
+<br>
+
+<!--<h4>Available Etracks in the local cache DB: </h4>-->
+<!--<link rel="stylesheet" href="{{ STATIC_URL }}/static/themes/paleblue/css/screen.css"/>-->
+<!--{% render_table racache %}-->
+<footer>
+    <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; Veritas 2015 </p>-->
+    <p><br><br><br><br><br><br><br>&copy; Veritas 2016 </p>
+</footer>
+
+{% endblock %}
+

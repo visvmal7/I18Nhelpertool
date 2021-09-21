@@ -1,0 +1,47 @@
+﻿{% extends 'smartapp/base.html' %}
+{% load static %}
+{% block content %}
+{% load staticfiles %}
+
+    <html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129913853-1"></script>
+		<script>
+		 window.dataLayer = window.dataLayer || [];
+		 function gtag(){dataLayer.push(arguments);}
+		 gtag('js', new Date());
+
+		 gtag('config', 'UA-129913853-1');
+		</script>
+
+		<meta charset="utf-8">
+		<title>Get I18N Value</title>
+
+	</head>
+    <body>
+
+       <form name="demoForm">
+
+          <p><font size="3"> <b>This I18N Helper Tool is designed to help teams with quick reference and guidance while doing I18N testing.</b> <br /> <br />Below are links with short description about each tab. </font ></p> 
+		  <a href="http://i18nhelpertool.pne.ven.veritas.com/setuplocale/"><b>Setup Locale &nbsp &nbsp &nbsp &nbsp :</b> </a><font size="3"> Change the locale of a Linux machine. </font><br />
+		  <br />
+		  <a href="http://i18nhelpertool.pne.ven.veritas.com/i18nkb/"><b>Knowledge Base &nbsp :</b> </a><font size="3"> Quick Reference link to the I18N Knowledge base on Confluence. </font><br />
+		  <br />
+		  <a href="http://i18nhelpertool.pne.ven.veritas.com/syslocale/"><b>Locale Information &nbsp &nbsp :</b> </a><font size="3"> Data that can be used for i18N L1 testing: </font><br /> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 1) Non-ASCII characters to test character handling.  <br /> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 2) Quick reference to regional locale formats. <br />
+		  <br />
+		  <a href="http://i18nhelpertool.pne.ven.veritas.com/osdownload/"><b>OS Download &nbsp &nbsp &nbsp :</b> </a><font size="3"> Download OVF/A VMWare operating system images in different languages and import &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp to ESX for testing.</font> <br />
+		  <br />
+		  <a href="http://i18nhelpertool.pne.ven.veritas.com/syslocaledownload/"><b>Script Download &nbsp :</b> </a> <font size="3">Download a locale-change shell script and customize to your unique environment &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp requirements.</font> <br />
+		  
+		  <br />
+		  <br />
+		  <p><font size="3"> For any query write email to <b>DL-VTAS-G11N-I18N@veritas.com</b> </font ></p> 
+     </form>
+
+
+{% if uploaded_file_url %}
+<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+{% endif %}
+
+{% endblock %}

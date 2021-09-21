@@ -1,0 +1,35 @@
+{% extends 'smartapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2><font face="verdana">I18N KB</font></h2>
+    <br>
+    <label for="function_name">Select an article to view Knowledge Base:</label>
+    <select name="function_name" id="function_name" onchange="window.open(this.options[this.selectedIndex].value,'_blank')">
+        <option value="https://confluence.community.veritas.com/display/GLOB/Introduction+to+Internationalization">Introduction i18N </option>
+        <option value="https://confluence.community.veritas.com/display/GLOB/I18N%3A+Development">Dev References</option>
+        <option value="https://confluence.community.veritas.com/display/GLOB/I18N+Level+0+Definition">i18N Level 0</option>
+        <option value="https://confluence.community.veritas.com/display/GLOB/I18N+Level+1+Definition">i18N Level 1</option>
+        <option value="https://confluence.community.veritas.com/display/GLOB/I18N+Level+2+Definition">i18N Level 2</option>
+        <option value="https://confluence.community.veritas.com/display/GLOB/I18N+Level+3+Definition">i18N Level 3</option>
+        <option value="https://confluence.community.veritas.com/display/GLOB/Globalization+Tools">G11N Tools</option>
+		<option value="https://confluence.community.veritas.com/display/GLOB/Visual+Design">UX-Visual Design</option>
+		<option value="https://confluence.community.veritas.com/display/GLOB/Globalization+UX+Checklist">UX-G11N Checklist</option>
+		<option value="https://translate.veritas.com/">Infodev Document Translation</option>
+
+		
+    </select>
+    <br>
+    <br>
+    <h3><font face="verdana">Note:Link will open in other TAB</font></h3>
+</form>
+
+{% if uploaded_file_url %}
+<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+{% endif %}
+
+
+{% endblock %}

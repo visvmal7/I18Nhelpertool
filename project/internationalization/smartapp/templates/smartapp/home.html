@@ -1,0 +1,12 @@
+{% extends "smartapp/base.html" %}
+{% block content %}
+<!--{{ hello }}-->
+<ul>
+    {% for line in lines %}
+    <li style="color:{%cycle 'blue' 'green' %}">{{ line.text }}</li>
+</ul>
+{% endfor %}
+<ul>
+    Hi {{name}}. Welcome to I18N Desktop Site...
+</ul>
+{% endblock %}

@@ -1,0 +1,74 @@
+
+{% extends 'smartapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Work in Progress!!!</h2>
+        <h2>Get I18N Value</h2>
+        <link rel="stylesheet" type ='text/css' href="{% static 'css/nbusetup.css' %}">
+
+        <br>
+           <label for="nbuinst_uninst">Select what you like to perform:</label>
+           <div style="height:70px; text-align:left;">
+
+             <select name="nbuinst_uninst" id="nbuinst_uninst">
+                <option value="101">Install</option>
+                <option value="102">Uninstall</option>
+            </select>
+        <br>
+         <br>
+           <label for="nbuplatform_name">Select OS Platform of Target Machine:</label>
+               <div class="select_join" style="margin-left:85px">
+                <select name="nbuplatform_name" id="nbuplatform_name">
+                <option value="10">Linux</option>
+                <option value="20">Windows</option>
+            </select>
+          <br>
+          </div>
+           </div>
+          <br>
+             <label for="nbumachine_name">Enter Host(FQDN): </label>
+            <input id="nbumachine_name" type="text" name="nbumachine_name" maxlength="100"/>
+        <br>
+           <br>
+            <label for="nbumachine_username">Remote Machine user: </label>
+            <input id="nbumachine_username" type="text" name="nbumachine_username" maxlength="100"/>
+        <br>
+
+            <br>
+            <label for="nbumachine_password">Remote Machine password: </label>
+            <input id="nbumachine_password" type="text" name="nbumachine_password" maxlength="100"/>
+        <br>
+
+        <br>
+            <label for="nbubuild_ver">Build Version: </label>
+            <input id="nbubuild_ver" type="text" name="nbubuild_ver" maxlength="100"/>
+        <br>
+
+        <br>
+            <label for="nbulang_pack">Select language pack:</label>
+            <select name="nbulang_pack" id="nbulang_pack">
+                <option value="1">Japanese</option>
+                <option value="2">Simplified Chinese</option>
+                <option value="3">French</option>
+                <option value="4">None</option>
+            </select>
+        <br>
+
+           <div style="height:35px; text-align:center;">
+            <input type="submit" value="Submit!" class="btn btn-primary btn-lg"/>
+       </div>
+    <h2>Work in progress!!!</h2>
+</form>
+
+
+{% if uploaded_file_url %}
+<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+{% endif %}
+
+
+{% endblock %}

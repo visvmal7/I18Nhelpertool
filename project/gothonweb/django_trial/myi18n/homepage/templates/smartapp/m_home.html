@@ -1,0 +1,12 @@
+{% extends "smartapp/base.html" %}
+{% block content %}
+<!--{{ hello }}-->
+<ul>
+    {% for line in lines %}
+    <li style="color:{%cycle 'blue' 'green' %}">{{ line.text }}</li>
+</ul>
+{% endfor %}
+<ul>
+    Hi... Welcome to NioBerry Mobile
+</ul>
+{% endblock %}

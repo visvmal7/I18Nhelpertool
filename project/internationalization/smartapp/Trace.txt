@@ -1,0 +1,54 @@
+
+ Getting System Details, it may take some time...please wait
+[CMD] hostname 
+CMD ReturnCode - 0
+CMD STDOUT - V-257081A
+ type                   ==> windows
+ hostname               ==> V-257081A
+Starting the daemon....
+In parent....Started the daemon and created Trace.txt for logging....
+
+ Getting System Details, it may take some time...please wait
+[CMD] hostname 
+CMD ReturnCode - 0
+CMD STDOUT - V-257081A
+ type                   ==> windows
+ hostname               ==> V-257081A
+Starting the daemon....
+In parent....Started the daemon and created Trace.txt for logging....
+
+ Getting System Details, it may take some time...please wait
+[CMD] hostname 
+CMD ReturnCode - 0
+CMD STDOUT - V-257081A
+ hostname               ==> V-257081A
+ type                   ==> windows
+Starting the daemon....
+In parent....Started the daemon and created Trace.txt for logging....
+
+ Getting System Details, it may take some time...please wait
+[CMD] hostname 
+CMD ReturnCode - 0
+CMD STDOUT - V-257081A
+ type                   ==> windows
+ hostname               ==> V-257081A
+Starting the daemon....
+In parent....Started the daemon and created Trace.txt for logging....
+
+ Getting System Details, it may take some time...please wait
+[CMD] hostname 
+CMD ReturnCode - 0
+CMD STDOUT - V-257081A
+ type                   ==> windows
+ hostname               ==> V-257081A
+Starting the daemon....
+In parent....Started the daemon and created Trace.txt for logging....
+
+ Getting System Details, it may take some time...please wait
+[CMD] hostname 
+CMD ReturnCode - 0
+CMD STDOUT - V-257081A
+ hostname               ==> V-257081A
+ type                   ==> windows
+Starting the daemon....
+In parent....Started the daemon and created Trace.txt for logging....

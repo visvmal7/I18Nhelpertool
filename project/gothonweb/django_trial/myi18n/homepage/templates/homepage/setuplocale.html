@@ -1,0 +1,48 @@
+{% extends 'homepage/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>i18N - Setup Locale</h2>
+    <br>
+    <label for="platform_name">Select OS Platform of Target Machine:</label>
+    <select name="platform_name" id="platform_name">
+        <option value="10">Linux</option>
+        <option value="20">Windows</option>
+    </select>
+
+    <br>
+    <label for="machine_name">Remote Machine Name/IP: </label>
+    <input id="machine_name" type="text" name="machine_name" maxlength="100"/>
+
+
+    <br>
+    <label for="user_name">Remote Machine UserName: </label>
+    <input id="user_name" type="text" name="user_name" maxlength="100"/>
+    <br>
+
+    <br>
+    <label for="remote_passwd">Remote Machine Password: </label>
+    <input id="remote_passwd" type="text" name="remote_passwd" maxlength="100"/>
+    <br>
+
+    <label for="lang_choice">Select language:</label>
+    <select name="lang_choice" id="lang_choice">
+        <option value="1">Japanese</option>
+        <option value="2">English</option>
+        <option value="3">Simplified Chinese</option>
+        <option value="4">French</option>
+    </select>
+    <br>
+    <br>
+    <input type="submit" value="Set Locale!" class="btn btn-primary btn-lg"/>
+</form>
+
+{% if uploaded_file_url %}
+<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+{% endif %}
+
+<p><a href="{% url 'home' %}">Return to home</a></p>
+{% endblock %}

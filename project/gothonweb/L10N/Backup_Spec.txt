@@ -1,0 +1,29 @@
+# -*- mode: python -*-
+
+block_cipher = None
+
+
+a = Analysis(['Main_Page.py'],
+             pathex=['c:\\projects\\gothonweb\\L10N'],
+             binaries=[],
+             hiddenimports=[],
+             hookspath=[],
+             runtime_hooks=[],
+             excludes=[],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher)
+a.datas += [('Globalization.jpeg','C:\\projects\\gothonweb\\L10N\\Globalization.jpeg', 'data'),('I18N_Level.png','C:\\projects\\gothonweb\\L10N\\I18N_Level.png','data'),('GE.png','C:\\projects\\gothonweb\\L10N\\GE.png','data'),('I18N_team.png','C:\\projects\\gothonweb\\L10N\\I18N_team.png','data')]
+pyz = PYZ(a.pure, a.zipped_data,
+             cipher=block_cipher)
+exe = EXE(pyz,
+          a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
+          name='Main_Page',
+          debug=False,
+          strip=False,
+          upx=True,
+          runtime_tmpdir=None,
+          console=False )

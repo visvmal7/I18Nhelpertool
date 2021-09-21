@@ -1,0 +1,211 @@
+{% extends 'smartapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+
+
+    <h2><font face="verdana">I18N - OS Download</font></h2>
+    <hr />
+    Select Window Version:
+    <select id="continent" name="continent" onchange="countryChange(this.id, 'country')">
+    <option value="empty">Select...</option>
+    <option value="Windows_2012">Window 2012</option>
+    <option value="Windows_2016">Window 2016</option>
+    <option value="Windows_2019">Window 2019</option>
+    <option value="Windows_2022">Window 2022</option>
+	</select>
+    <hr />
+    Select Language:
+   
+    <select id ="country" name="country" onchange="langfilename(this)" ></select>
+      
+    <br/>
+    <br>
+
+      <a href ="javascript:somescript()"></a>
+      
+ 
+<!--   Below is Java scrip Function "Countrychange" While selection the Windows version then display languages -->
+
+<script type="text/javascript">
+        
+        function countryChange(continent1, country1) { 
+            var continent1 =  document.getElementById(continent1);
+            var country1 =  document.getElementById(country1);
+          
+            country1.innerHTML = "";
+
+            if (continent1.value == "Windows_2022"){
+                    var optionArray = ["|","japanese_22.iso|Japanese","french_22.iso|French","german_22.iso|German","chinese_22.iso|Simplifed Chinese"];
+
+            } else if (continent1.value == "Windows_2012"){
+                    var optionArray = ["|","Simp_Chinese_12.ova|Simplified Chinese","Japanese_12.ova|Japanese","Germany_12.ova|German", "French_12.ova|French" ];
+ 
+            } else if (continent1.value == "Windows_2016"){
+                    var optionArray = ["|","chinese_16.iso|Simplified Chinese","japanese_16.iso|Japanese","French_16.iso|French"];
+
+           } else if (continent1.value == "Windows_2019"){
+                    var optionArray = ["|","german_19.iso|German","Japanese_19.ova|Japanese","Chinese_19.ova|Simplified Chinese","French_19.ova|French" ];
+                    
+            }
+            for (var option in optionArray){
+            var pair = optionArray[option].split("|");
+            var newOption = document.createElement("option");
+            newOption.value = pair[0];      
+            newOption.innerHTML = pair[1]
+            country1.options.add(newOption);
+            
+            }
+           
+        }
+</script>
+
+   
+<script >
+// Code is to show up the Dialog, which will ask the location where to save the OVA/OS file
+        function download(filename, loc) {
+                var element = document.createElement('a');
+                element.setAttribute('href', 'data:application/iso;base64,YWJj' + encodeURIComponent(loc));
+                element.setAttribute('download', filename);
+                loc.download
+                element.style.display = 'none';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+        }
+         document.getElementById("myBtn").addEventListener("click", langfilename);
+        function langfilename(sel){
+                var value = sel.value
+                var ospath = "../static/os/" + value
+                somescript(value)
+
+        }
+
+
+        function somescript(osvalue){
+                // alert ("this is the value" +osvalue)
+               if (osvalue == "french_22.iso")
+                {
+                        window.location.href = "../static/os/french_22.iso";
+                      
+
+                }
+                else if (osvalue == "japanese_22.iso")
+                {
+                        window.location.href = "../static/os/japanese_22.iso";
+                        
+                }
+                
+				 else if (osvalue == "german_22.iso")
+                {
+                        window.location.href = "../static/os/german_22.iso";
+                        
+                } 
+				
+				else if (osvalue == "chinese_22.iso")
+                {
+                        window.location.href = "../static/os/chinese_22.iso";
+                        
+                }
+				
+                else if (osvalue == "Japanese_12.ova")
+                {
+                        window.location.href = "../static/os/Japanese_12.ova";
+                        
+                }
+                else if (osvalue == "French_12.ova")
+                {
+                        window.location.href = "../static/os/French_12.ova";
+                        
+                }
+                else if (osvalue == "Simp_Chinese_12.ova")
+                {
+                        window.location.href = "../static/os/Simp_Chinese_12.ova";
+                        
+                }
+                else if (osvalue == "Russian_12.ova")
+                {
+                        window.location.href = "../static/os/Russian_12.ova";
+                        
+                }    
+                else if (osvalue == "Germany_12.ova")
+                {
+                        window.location.href = "../static/os/Germany_12.ova";
+                        
+                }
+                else if (osvalue == "chinese_16.iso")
+                {
+                        window.location.href = "../static/os/WINDOWS_2016_Chinese_Simplified.zip";
+                        
+                }
+                else if (osvalue == "japanese_16.iso")
+                {
+                        window.location.href = "../static/os/WINDOWS_2016_Japanese.zip";
+                        
+                }
+                else if (osvalue == "German_16.iso")
+                {
+                        window.location.href = "../static/os/WIN2016_German.zip";
+                        
+                }
+                else if (osvalue == "korean_16.iso")
+                {
+                        window.location.href = "../static/os/WINDOWS_2016_Korean.zip";
+                        
+                }
+				else if (osvalue == "French_16.iso")
+                {
+                        window.location.href = "../static/os/WINDOWS_2016_French.zip";
+                        
+                }
+				else if (osvalue == "english_19.iso")
+                {
+                        window.location.href = "../static/os/English_19.iso";
+                        
+                }
+				else if (osvalue == "german_19.iso")
+                {
+                        window.location.href = "../static/os/Germany_19.iso";
+                        
+                }
+				else if (osvalue == "Japanese_19.ova")
+                {
+                        window.location.href = "../static/os/Japanese_19.ova";
+                        
+                }
+				else if (osvalue == "Chinese_19.ova")
+                {
+                        window.location.href = "../static/os/Chinese_19.ova";
+                        
+                }
+				else if (osvalue == "French_19.ova")
+                {
+                        window.location.href = "../static/os/French_19.ova";
+                        
+                }
+                else {
+
+                       alert ("File not found, to receive file, please send email to DL-VTAS-G11N-I18N@veritas.com")
+               }              
+                
+        }
+
+</script>
+
+
+
+	<h4> Login credential for VM is <b>"Veri@pass"</b></h4>
+</form>
+
+{% if uploaded_file_url %}
+<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+{% endif %}
+
+
+{% endblock %}

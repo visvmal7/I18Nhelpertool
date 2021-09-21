@@ -1,0 +1,19 @@
+{% extends 'smartapp/base.html' %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ STATIC_URL }}/static/themes/paleblue/css/screen.css"/>
+<h3>Browse Token Log file to generate a report</h3>
+<h4> Drop down to select language</h4>
+<h4> Character : Textbox</h4>
+<h4>date : textbox </h4>
+<h4> time : text box </h4>
+<h4> Legacy Encoding : For Eng -ASCII, For de- ISO-8859-15, For Chinese - GBK, For Jp - SHIFT-JIS </h4>
+
+<br>
+<h4> Would you like to validate your UTF chars?></h4>
+<h4> UTC Date : Current date display </h4>
+<h4> Input character is: ---- attach the code here ----</h4>
+
+{{nbucomplist}}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'smartapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>Corporate Mobile Backup</h2>
+   <br>
+    <label for="author_name">Backup policy Type: Mobile Backup</label>
+    <br>
+    <label for="author_name">Backup policy Name: </label>
+    <input id="author_name" type="text" name="author_name" maxlength="100"/>
+    <br>
+    <input type="file" name="myfile" class="btn btn-primary btn-lg">
+    <!-- Drop down code working -->
+    <label for="function_name">Select Backup Site:</label>
+    <select name="function_name" id="function_name">
+        <option value="1">NetBackup</option>
+        <option value="2">Backup-Exec</option>
+        <!--<option value="3">Medium high</option>-->
+        <!--<option value="2">Medium</option>-->
+        <!--<option value="1">Low</option>-->
+    </select>
+    <br>
+    <!-- Drop down code working -->
+    <label for="importance_value">Backup Priority:</label>
+    <select name="importance_value" id="importance_value">
+        <option value="1">Instant Backup</option>
+        <option value="2">Policy driven Backup</option>
+        <!--<option value="3">Medium high</option>-->
+        <!--<option value="2">Medium</option>-->
+        <!--<option value="1">Low</option>-->
+    </select>
+    <br>
+    <input type="submit" value="Backup!" class="btn btn-primary btn-lg"/>
+</form>
+
+{% if uploaded_file_url %}
+<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+{% endif %}
+
+<p><a href="{% url 'home' %}">Return to home</a></p>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'smartapp/base.html' %}
+{% load render_table from django_tables2 %}
+{% block content %}
+
+<form action="/nbucompsearch/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>
+
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-md-8">-->
+            <div class="col-sm-offset-2 col-sm-10">
+                <h2>Device Backup</h2>
+
+                <form action="" method="get" accept-charset="utf-8">
+                    <br>
+                    <br>
+
+                    <label for="author_name">Backup policy Type: Mobile Backup</label>
+                    <br>
+                    <label for="author_name">Backup policy Name</label>
+                    <input id="author_name" type="text" name="author_name" maxlength="100"/>
+                    <br>
+
+                    <label for="author_name">Select Files to backup:</label>
+
+                    <label class="btn btn-primary" for="my-file-selector">
+                        <input id="my-file-selector" type="file" style="display:none;"
+                               onchange="$('#upload-file-info').html($(this).val());">
+                        Browse files...
+                    </label>
+                    <span class='label label-info' id="upload-file-info"></span>
+                    <br>
+
+                    <!--<label class="btn btn-primary" for="my-file-selector">-->
+                    <!--<input id="my-file-selector" type="file" style="display:none;">-->
+                    <!--Browse2-->
+                    <!--</label>-->
+                    <!-- -->
+
+                    <!-- Browse button code disabled temporary-->
+                    <!--<label class="btn btn-primary" for="my-file-selector">-->
+                    <!--<input id="my-file-selector" type="file" style="display:none;"-->
+                    <!--onchange="$('#upload-file-info').html($(this).val());">-->
+                    <!--Browse...-->
+                    <!--</label>-->
+                    <!--<span class='label label-info' id="upload-file-info"></span>-->
+                    <!--<br>-->
+
+                    <!--Working code - restore if needed-->
+                    <!--<label for="tag_name">TAG Name(s)*:</label>-->
+                    <!--<input id="tag_name" type="text" name="tag_name" maxlength="100"/>-->
+                    <!--<br>-->
+
+                    <!-- Drop down code working -->
+                    <!--<label for="tag_name">TAG Name(s)*:</label>-->
+                    <!--<select name="tag_name" id="tag_name">-->
+                    <!--<option value="AIR">AIR</option>-->
+                    <!--<option value="Appliance">Appliance</option>-->
+                    <!--<option value="BEDS">BEDS</option>-->
+                    <!--<option value="BMR">BMR</option>-->
+                    <!--<option value="Cluster">Cluster</option>-->
+                    <!--<option value="Duplication">Duplication</option>-->
+                    <!--<option value="EV AgentCluster">EV AgentCluster</option>-->
+                    <!--<option value="FS_SNC">FS SNC</option>-->
+                    <!--<option value="i18N">i18N</option>-->
+                    <!--<option value="Install And Upgrade">Install And Upgrade</option>-->
+                    <!--<option value="MSDP">MSDP</option>-->
+                    <!--<option value="Cloud">Cloud</option>-->
+                    <!--<option value="NDMP">NDMP</option>-->
+                    <!--<option value="OST">OST</option>-->
+                    <!--<option value="Opscenter">Opscenter</option>-->
+                    <!--<option value="Replication Director">Replication Director</option>-->
+                    <!--<option value="SharePoint">SharePoint</option>-->
+                    <!--<option value="Unix-FS">Unix-FS</option>-->
+                    <!--</select>-->
+                    <!--<br>-->
+
+                    <!--<label for="source_path">Data Classification:</label>-->
+                    <!--<input id="source_path" type="text" name="source_path" maxlength="100"/>-->
+                    <!--<br>-->
+
+                    <!--<label for="function_name">Function Name *:</label>-->
+                    <!--<input id="function_name" type="text" name="function_name" maxlength="100"/>-->
+                    <!--<br>-->
+
+                    <!--Working code - restore if needed-->
+                    <!--<label for="importance_value">Function Importance *:</label>-->
+                    <!--<input id="importance_value" type="text" name="importance_value" maxlength="100"/>-->
+                    <!--<br>-->
+
+                    <!-- Drop down code working -->
+                    <label for="function_name">Select Backup Site:</label>
+                    <select name="function_name" id="function_name">
+                        <option value="1">NetBackup</option>
+                        <option value="2">Backup-Exec</option>
+                        <!--<option value="3">Medium high</option>-->
+                        <!--<option value="2">Medium</option>-->
+                        <!--<option value="1">Low</option>-->
+                    </select>
+                    <br>
+                    <!-- Drop down code working -->
+                    <label for="importance_value">Backup Priority:</label>
+                    <select name="importance_value" id="importance_value">
+                        <option value="1">Instant Backup</option>
+                        <option value="2">Policy driven Backup</option>
+                        <!--<option value="3">Medium high</option>-->
+                        <!--<option value="2">Medium</option>-->
+                        <!--<option value="1">Low</option>-->
+                    </select>
+                    <br>
+
+                    <p>
+                        <input type="submit" value="Backup!" class="btn btn-primary btn-lg"/>
+                    </p>
+                    <h4> Note: All fields are mandatory...</h4>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </p>
+
+</form>
+
+
+{% endblock %}
+
