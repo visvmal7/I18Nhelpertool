@@ -9,6 +9,7 @@ import locale
 def I18NDateFind():
     locale.setlocale(locale.LC_ALL, '')
     #print locale.setlocale(locale.LC_ALL,'')
+    #print "testing"
     format_ = datetime.datetime.today().strftime('%x')
     DateFormat = format_.decode(locale.getlocale()[1])
     return DateFormat
